@@ -1,5 +1,5 @@
 ## Technical Exerices
 
-> Clone the Repo
-> ex1 run elm-reactor or elm-make Main.elm-make
-> ex2 open index.html in browser
+1. Clone the Repo
+2. ex1 run elm-reactor or elm-make Main.elm-make
+3. ex2 open index.html in browser
