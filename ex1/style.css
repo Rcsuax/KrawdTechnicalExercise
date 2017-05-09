@@ -1,0 +1,21 @@
+body
+{
+  background-color: #fcfcfc;
+  color: #fff;
+  text-align: center;
+  font-size: 3em;
+}
+
+.center-div
+{
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 400px;
+  height: 400px;
+  background-color: #000000;
+  border-radius: 3px;
+}
