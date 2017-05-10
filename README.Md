@@ -11,13 +11,13 @@ open index.html in your browser
 
 ### Exercise 3
 This solution is by no means perfect and is abit hacky for a few reasons:
-* I couldn't test the API because it didn't look like it was configured with cors so I couldn't test it locally.
+* I couldn't test the API locally because it didn't seem to be configured with CORS.
 * The API was inconsistent:
-  * It had issues with caused it to return null or ""
-  * It returned the Player JSON but it occasionally was missing fields.
+  * It had issues which caused it to return null or " " (empty string).
+  * It returned the Player JSON but it was missing fields.
   
 To get around these issues I:
-1. Wrote a script to sanitize the JSON returned from the API
+1. Wrote a script to GET and sanitize the JSON returned from the API.
 2. Used Json-server to deploy a mock API.
 
 To test the Exercise locally you need to:
