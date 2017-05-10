@@ -1,0 +1,13 @@
+{
+    "players": [{
+        "name": "Mango",
+        "country": "United States",
+        "characters_index": "fox,falco",
+        "rank": 1
+    }, {
+        "name": "PPMD",
+        "country": "GB",
+        "characters_index": "falco,marth",
+        "rank": 2
+    }]
+}
