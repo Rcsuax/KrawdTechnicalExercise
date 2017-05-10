@@ -1,6 +1,6 @@
-module Update exposing (..)
+module Components.Update exposing (..)
 
-import Model exposing (..)
+import Components.Model exposing (..)
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -38,7 +38,7 @@ update msg model =
         SetFilter type_ ->
             { model | filterType = type_ } ! [ Cmd.none ]
 
-        _ ->
+        GetPlayers (Err error) ->
             model ! [ Cmd.none ]
 
 
@@ -49,4 +49,4 @@ filterName players input =
 
 filterCountry : List Player -> String -> List Player
 filterCountry players input =
-    List.filter (\n -> n.country == input) players
+    List.filter (\n -> (Components.Model.transformMaybe n.country) == input) players

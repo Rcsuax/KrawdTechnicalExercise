@@ -1,10 +1,10 @@
 module Main exposing (..)
 
 import Html exposing (program)
-import View exposing (..)
-import Model exposing (..)
-import Update exposing (..)
-import Request exposing (..)
+import Components.View exposing (..)
+import Components.Model exposing (..)
+import Components.Update exposing (..)
+import Components.Request exposing (..)
 
 
 main : Program Never Model Msg

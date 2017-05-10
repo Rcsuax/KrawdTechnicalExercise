@@ -1,23 +1,26 @@
-module View exposing (..)
+module Components.View exposing (..)
 
 import Html exposing (..)
 import Html.Events exposing (..)
 import Html.Attributes exposing (..)
-import Model exposing (..)
+import Components.Model exposing (..)
 
 
 view : Model -> Html Msg
 view model =
     div []
         [ searchType
-        , search
+        , search model
         , renderPlayers model
         ]
 
 
-search : Html Msg
-search =
-    input [ type_ "text", placeholder "Search", onInput Search ] []
+search : Model -> Html Msg
+search model =
+    if model.filterType == "None" then
+        input [ type_ "text", placeholder "Search", onInput Search, disabled True ] []
+    else
+        input [ type_ "text", placeholder "Search", onInput Search ] []
 
 
 searchType : Html Msg
@@ -37,9 +40,9 @@ renderPlayers model =
 renderPlayer : Player -> Html Msg
 renderPlayer player =
     tr []
-        [ td [] [ text (toString player.rank) ]
+        [ td [] [ text (toString (player.rank)) ]
         , td [] [ text player.name ]
-        , td [] [ text player.country ]
+        , td [] [ text (Components.Model.transformMaybe player.country) ]
         , td [] [ text player.characters_index ]
         ]
 
