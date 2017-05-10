@@ -1,13 +1,30 @@
-## Technical Exerices
+# Technical Exerices
 
-1. Clone the Repo
-2. ex1 run elm-reactor or elm-make Main.elm
-3. ex2 open index.html in browser
+## Getting started
 
->4. Because the provided api didn't return CORS headers I couldn't test it from my Localhost
-so I scraped the data from the api and used json-server to serve json locally.
-I also removed alot of the unused fields from the json as they wouldn't be used for the task.
-To set up the api locally:
-npm install -g json-server
-json-server --watch db.json
-To run the application, you can elm-make Main.elm or run elm-reactor.
+### Exercise 1
+1. run elm-package install -y
+2. run elm-reactor or elm-make Main.elm
+
+### Exercise 2
+open index.html in your browser
+
+### Exercise 3
+This solution is by no means perfect and is abit hacky for a few reasons:
+* I couldn't test the API because it didn't look like it was configured with cors so I couldn't test it locally.
+* The API was inconsistent:
+  * It had issues with caused it to return null or ""
+  * It returned the Player JSON but it occasionally was missing fields.
+  
+To get around these issues I:
+1. Wrote a script to sanitize the JSON returned from the API
+2. Used Json-server to deploy a mock API.
+
+To test the Exercise locally you need to:
+1. `cd ex3/`
+2. `npm install` 
+3. `npm install -g json-server`
+4. `elm-package install -y`
+4. you can either do `npm run fetch` or you can skip to the next step and use the db.json that is already provided.
+5. run `json-server --watch db.json`
+6. run `elm-reactor` or `elm-make Main.elm`
